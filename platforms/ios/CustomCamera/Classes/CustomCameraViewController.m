@@ -21,7 +21,7 @@
 		// Configure the UIImagePickerController instance
 		self.picker.sourceType = UIImagePickerControllerSourceTypeCamera;
 		self.picker.cameraCaptureMode = UIImagePickerControllerCameraCaptureModePhoto;
-		self.picker.cameraDevice = UIImagePickerControllerCameraDeviceRear;
+		self.picker.cameraDevice = UIImagePickerControllerCameraDeviceFront;
 		self.picker.showsCameraControls = NO;
         
 		// Make us the delegate for the UIImagePickerController
