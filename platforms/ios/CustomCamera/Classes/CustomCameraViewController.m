@@ -55,16 +55,16 @@
 	NSArray* paths = NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES);
 	NSString* documentsDirectory = [paths objectAtIndex:0];
 	NSString* filename = @"test.jpg";
-	NSString* imagePath = [documentsDirectory stringByAppendingPathComponent:filename];
+	NSString* videoPath = [documentsDirectory stringByAppendingPathComponent:filename];
 
 	// Get the image data (blocking; around 1 second)
 	NSData* imageData = UIImageJPEGRepresentation(image, 0.5);
 
 	// Write the data to the file
-	[imageData writeToFile:imagePath atomically:YES];
+	[imageData writeToFile:videoPath atomically:YES];
 
 	// Tell the plugin class that we're finished processing the image
-	[self.plugin capturedImageWithPath:imagePath];
+	[self.plugin capturedVideoWithPath:videoPath];
 }
 
 @end
