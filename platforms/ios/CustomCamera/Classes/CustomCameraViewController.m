@@ -54,7 +54,7 @@
     NSURL* video = [info objectForKey:UIImagePickerControllerMediaURL];
     NSData* videoData = [NSData dataWithContentsOfURL:video];
     
-    // Get a file path to save the JPEG
+    // Get a file path to save the MP4
     NSArray* paths = NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES);
     NSString* documentsDirectory = [paths objectAtIndex:0];
     NSString* filename = @"test.mp4";
