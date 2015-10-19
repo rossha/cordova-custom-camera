@@ -23,6 +23,7 @@
     self.picker.mediaTypes = [NSArray arrayWithObject:(NSString *)kUTTypeMovie];
     self.picker.cameraCaptureMode = UIImagePickerControllerCameraCaptureModeVideo;
 		self.picker.cameraDevice = UIImagePickerControllerCameraDeviceFront;
+        self.picker.videoMaximumDuration = 5.0;
 		self.picker.showsCameraControls = NO;
 
 		// Make us the delegate for the UIImagePickerController
@@ -42,7 +43,7 @@
 // Action method.  This is like an event callback in JavaScript.
 -(IBAction) takePhotoButtonPressed:(id)sender forEvent:(UIEvent*)event {
 	// Call the takePicture method on the UIImagePickerController to capture the image.
-	[self.picker takePicture];
+	[self.picker startVideoCapture];
 }
 
 // Delegate method.  UIImagePickerController will call this method as soon as the image captured above is ready to be processed.  This is also like an event callback in JavaScript.
