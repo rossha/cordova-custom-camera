@@ -4,6 +4,9 @@
     <description>
         A sample Apache Cordova application that responds to the deviceready event.
     </description>
+    <author email="support@phonegap.com" href="http://phonegap.com">
+        PhoneGap Team
+    </author>
     <access origin="*" />
     <content src="index.html" />
     <preference name="AllowInlineMediaPlayback" value="false" />
@@ -21,9 +24,6 @@
     <feature name="LocalStorage">
         <param name="ios-package" value="CDVLocalStorage" />
     </feature>
-    <feature name="CustomCamera">
-        <param name="ios-package" value="CustomCamera" />
-    </feature>
     <name>CustomCamera</name>
     <description>
         Hello World sample application that responds to the deviceready event.
@@ -31,7 +31,6 @@
     <author email="support@phonegap.com" href="http://phonegap.com">
         PhoneGap Team
     </author>
-    <feature name="http://api.phonegap.com/1.0/device" />
     <preference name="permissions" value="none" />
     <preference name="orientation" value="default" />
     <preference name="target-device" value="universal" />

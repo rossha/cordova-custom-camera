@@ -19,5 +19,6 @@
 // Declare some properties (to be explained soon)
 @property (strong, nonatomic) CustomCamera* plugin;
 @property (strong, nonatomic) UIImagePickerController* picker;
+@property (nonatomic) NSTimeInterval* videoMaximumDuration;
 
 @end

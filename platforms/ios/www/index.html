@@ -37,7 +37,7 @@
             <script src="js/custom_camera.js"></script>
             <script>
             document.getElementById("openCustomCameraBtn").addEventListener("click", function(){
-                CustomCamera.getPicture(function(imagePath){
+                navigator.CustomCamera.startVideoCapture(function(imagePath){
                     document.getElementById("photoImg").setAttribute("src", imagePath);
                     console.log(imagePath);
                 }, function(){

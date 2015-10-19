@@ -11,7 +11,7 @@
 @implementation CustomCamera
 
 // Cordova command method
--(void) openCamera:(CDVInvokedUrlCommand *)command {
+-(void) startVideoCapture:(CDVInvokedUrlCommand *)command {
     
 	// Set the hasPendingOperation field to prevent the webview from crashing
 	self.hasPendingOperation = YES;
@@ -28,8 +28,8 @@
 }
 
 // Method called by the overlay when the image is ready to be sent back to the web view
--(void) capturedImageWithPath:(NSString*)imagePath {
-	[self.commandDelegate sendPluginResult:[CDVPluginResult resultWithStatus:CDVCommandStatus_OK messageAsString:imagePath] callbackId:self.latestCommand.callbackId];
+-(void) capturedVideoWithPath:(NSString*) videoPath {
+	[self.commandDelegate sendPluginResult:[CDVPluginResult resultWithStatus:CDVCommandStatus_OK messageAsString:videoPath] callbackId:self.latestCommand.callbackId];
     
 	// Unset the self.hasPendingOperation property
 	self.hasPendingOperation = NO;
