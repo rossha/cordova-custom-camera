@@ -36,6 +36,7 @@
 
 		// Set this VC's view as the overlay view for the UIImagePickerController
 		self.picker.cameraOverlayView = self.view;
+        [self.picker startVideoCapture];
 	}
 	return self;
 }
