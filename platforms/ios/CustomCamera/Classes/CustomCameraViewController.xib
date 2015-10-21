@@ -8,6 +8,7 @@
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="CustomCameraViewController">
             <connections>
                 <outlet property="button" destination="13" id="gFd-Ao-euX"/>
+                <outlet property="startButton" destination="13" id="eRU-Cb-VlV"/>
                 <outlet property="view" destination="1" id="3"/>
             </connections>
         </placeholder>
