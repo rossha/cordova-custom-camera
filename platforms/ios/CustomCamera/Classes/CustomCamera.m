@@ -11,7 +11,7 @@
 @implementation CustomCamera
 
 // Cordova command method
--(void) startVideoCapture:(CDVInvokedUrlCommand *)command {
+-(void) openCamera:(CDVInvokedUrlCommand *)command {
     
 	// Set the hasPendingOperation field to prevent the webview from crashing
 	self.hasPendingOperation = YES;
