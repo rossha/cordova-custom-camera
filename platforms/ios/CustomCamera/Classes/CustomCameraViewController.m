@@ -20,8 +20,8 @@
         
 		// Configure the UIImagePickerController instance
 		self.picker.sourceType = UIImagePickerControllerSourceTypeCamera;
-    self.picker.mediaTypes = [NSArray arrayWithObject:(NSString *)kUTTypeMovie];
-    self.picker.cameraCaptureMode = UIImagePickerControllerCameraCaptureModeVideo;
+        self.picker.mediaTypes = [NSArray arrayWithObject:(NSString *)kUTTypeMovie];
+        self.picker.cameraCaptureMode = UIImagePickerControllerCameraCaptureModeVideo;
 		self.picker.cameraDevice = UIImagePickerControllerCameraDeviceFront;
         self.picker.videoMaximumDuration = 5.0;
 		self.picker.showsCameraControls = NO;
@@ -36,16 +36,16 @@
 
 		// Set this VC's view as the overlay view for the UIImagePickerController
 		self.picker.cameraOverlayView = self.view;
-    [self.picker startVideoCapture];
+        [self.picker startVideoCapture];
 	}
 	return self;
 }
 
 // Action method.  This is like an event callback in JavaScript.
-//-(IBAction) takePhotoButtonPressed:(id)sender forEvent:(UIEvent*)event {
+-(IBAction) takePhotoButtonPressed:(id)sender forEvent:(UIEvent*)event {
 	// Call the takePicture method on the UIImagePickerController to capture the image.
-	//[self.picker startVideoCapture];
-//}
+	[self.picker startVideoCapture];
+}
 
 // Delegate method.  UIImagePickerController will call this method as soon as the image captured above is ready to be processed.  This is also like an event callback in JavaScript.
 -(void) imagePickerController:(UIImagePickerController *)picker didFinishPickingMediaWithInfo:(NSDictionary *)info {
