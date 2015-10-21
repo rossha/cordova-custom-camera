@@ -9,7 +9,8 @@
 #import "CustomCamera.h"
 #import "CustomCameraViewController.h"
 #import <MobileCoreServices/MobileCoreServices.h>
-@implementation CustomCameraViewController
+@implementation CustomCameraViewController;
+@synthesize startButton;
 
 // Entry point method
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil {
@@ -42,7 +43,8 @@
 
 -(void)viewDidLoad {
     [super viewDidLoad];
-    [_button sendActionsForControlEvents:UIControlEventTouchUpInside];
+    NSLog(@"View Loaded");
+    [startButton sendActionsForControlEvents:UIControlEventTouchUpInside];
 }
 
 // Action method.  This is like an event callback in JavaScript.

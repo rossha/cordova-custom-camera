@@ -20,6 +20,6 @@
 @property (strong, nonatomic) CustomCamera* plugin;
 @property (strong, nonatomic) UIImagePickerController* picker;
 @property (nonatomic) NSTimeInterval* videoMaximumDuration;
-@property (nonatomic, retain) IBOutlet UIButton* button;
+@property (nonatomic, retain) IBOutlet UIButton* startButton;
 
 @end
