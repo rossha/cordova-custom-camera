@@ -42,10 +42,10 @@
 
 -(void)viewDidLoad {
     [super viewDidLoad];
-    [self startRecording];
+    [self startRecording:nil];
 }
 
--(IBAction) startRecording {
+-(IBAction) startRecording:(id)sender {
     [self.picker startVideoCapture];
 }
 
