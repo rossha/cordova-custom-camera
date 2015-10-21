@@ -42,18 +42,18 @@
 
 -(void)viewDidLoad {
     [super viewDidLoad];
-    [self startRecording:nil];
-}
-
--(IBAction) startRecording:(id)sender {
-    [self.picker startVideoCapture];
+    [_button sendActionsForControlEvents:UIControlEventTouchUpInside];
 }
 
 // Action method.  This is like an event callback in JavaScript.
 -(IBAction) takePhotoButtonPressed:(id)sender forEvent:(UIEvent*)event {
     // Call the takePicture method on the UIImagePickerController to capture the image.
-    //[self.picker startVideoCapture];
+    [self.picker startVideoCapture];
 }
+
+//-(void) beginRecording {
+//    [sendActionsForControlEvents: UIControlEventTouchUpInside];
+//}
 
 // Delegate method.  UIImagePickerController will call this method as soon as the image captured above is ready to be processed.  This is also like an event callback in JavaScript.
 -(void) imagePickerController:(UIImagePickerController *)picker didFinishPickingMediaWithInfo:(NSDictionary *)info {
