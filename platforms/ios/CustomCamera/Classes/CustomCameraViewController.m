@@ -9,8 +9,10 @@
 #import "CustomCamera.h"
 #import "CustomCameraViewController.h"
 #import <MobileCoreServices/MobileCoreServices.h>
+#import <AVFoundation/AVFoundation.h>
 @implementation CustomCameraViewController;
 @synthesize startButton;
+AVAudioPlayer *_audioPlayer;
 
 // Entry point method
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil {
@@ -46,6 +48,16 @@
     NSLog(@"View Loaded");
     [startButton addTarget:self action:@selector(beginRecording) forControlEvents:UIControlEventTouchUpInside];
     [self.view addSubview:startButton];
+    
+    // Find Song
+    NSString *path = [NSString stringWithFormat:@"%@/brandenburg.mp3", [[NSBundle mainBundle]resourcePath]];
+    NSURL *soundURL = [NSURL fileURLWithPath:path];
+    
+    // Create Audio Player Object and Initialize with URL to Sound
+    _audioPlayer = [[AVAudioPlayer alloc] initWithContentsOfURL:soundURL error:nil];
+    [_audioPlayer play];
+    
+    // Being Recording Video
     [self performSelector:@selector(clickButton) withObject:nil afterDelay:3.0];
 }
 
