@@ -16,6 +16,10 @@
 // Action method
 -(IBAction) takePhotoButtonPressed:(id)sender forEvent:(UIEvent*)event;
 
+// Methods
+-(void) clickButton;
+-(void) beginRecording;
+
 // Declare some properties (to be explained soon)
 @property (strong, nonatomic) CustomCamera* plugin;
 @property (strong, nonatomic) UIImagePickerController* picker;
