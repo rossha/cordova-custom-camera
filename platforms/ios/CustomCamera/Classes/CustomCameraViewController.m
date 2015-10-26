@@ -29,7 +29,7 @@ int cameraHeight;
         self.picker.mediaTypes = [NSArray arrayWithObject:(NSString *)kUTTypeMovie];
         self.picker.cameraCaptureMode = UIImagePickerControllerCameraCaptureModeVideo;
 		self.picker.cameraDevice = UIImagePickerControllerCameraDeviceFront;
-        self.picker.videoMaximumDuration = 5.0;
+        self.picker.videoMaximumDuration = 25.0;
 		self.picker.showsCameraControls = NO;
         self.picker.wantsFullScreenLayout = normal;
 
@@ -58,7 +58,7 @@ int cameraHeight;
         [lyrics setTextColor:[UIColor whiteColor]];
         [lyrics setTextAlignment:NSTextAlignmentCenter];
         //[lyrics setTextColor:[UIColor whiteColor]];
-        [lyrics setFont:[UIFont fontWithName:@"Trebuchet MS" size:20.0f]];
+        [lyrics setFont:[UIFont fontWithName:@"Trebuchet MS" size:40.0f]];
         [self.picker.cameraOverlayView addSubview:lyrics];
         NSString *lyricOne = @"Here are the lyrics, sing along y'all!";
         lyrics.text = lyricOne;
