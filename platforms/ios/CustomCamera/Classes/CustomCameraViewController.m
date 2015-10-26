@@ -73,7 +73,7 @@ int cameraHeight;
     [self.view addSubview:startButton];
     
     // Find Song
-    NSString *path = [NSString stringWithFormat:@"%@/brandenburg.mp3", [[NSBundle mainBundle]resourcePath]];
+    NSString *path = [NSString stringWithFormat:@"%@/sweet_home.mp3", [[NSBundle mainBundle]resourcePath]];
     NSURL *soundURL = [NSURL fileURLWithPath:path];
     
     // Create Audio Player Object and Initialize with URL to Sound
