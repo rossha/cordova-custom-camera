@@ -25,5 +25,6 @@
 @property (strong, nonatomic) UIImagePickerController* picker;
 @property (nonatomic) NSTimeInterval* videoMaximumDuration;
 @property (nonatomic, retain) IBOutlet UIButton* startButton;
+@property (strong, nonatomic) UIView *overlayView;
 
 @end

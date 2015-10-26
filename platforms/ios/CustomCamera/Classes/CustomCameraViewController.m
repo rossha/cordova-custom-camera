@@ -12,7 +12,10 @@
 #import <AVFoundation/AVFoundation.h>
 @implementation CustomCameraViewController;
 @synthesize startButton;
+UIView *overlayView;
+UILabel *lyrics;
 AVAudioPlayer *_audioPlayer;
+int cameraHeight;
 
 // Entry point method
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil {
@@ -28,17 +31,37 @@ AVAudioPlayer *_audioPlayer;
 		self.picker.cameraDevice = UIImagePickerControllerCameraDeviceFront;
         self.picker.videoMaximumDuration = 5.0;
 		self.picker.showsCameraControls = NO;
+        self.picker.wantsFullScreenLayout = normal;
 
 		// Make us the delegate for the UIImagePickerController
 		self.picker.delegate = self;
 
 		// Set the frames to be full screen
 		CGRect screenFrame = [[UIScreen mainScreen] bounds];
-		self.view.frame = screenFrame;
-		self.picker.view.frame = screenFrame;
+        self.view.frame = screenFrame;
+		//self.picker.view.frame = screenFrame;
 
 		// Set this VC's view as the overlay view for the UIImagePickerController
 		self.picker.cameraOverlayView = self.view;
+        
+        // Adding Overlay View
+        int cameraHeight = screenFrame.size.height - 150;
+        CGRect lyricsRect = CGRectMake(0,cameraHeight,screenFrame.size.width,150);
+        UIView* overlayView = [[UIView alloc] initWithFrame:lyricsRect];
+        overlayView.backgroundColor = [UIColor blackColor];
+        [overlayView.layer setOpaque:NO];
+        overlayView.opaque = NO;
+        [self.picker.cameraOverlayView addSubview:overlayView];
+        
+        // Add Label for Overlay View to Display Lyrics
+        UILabel *lyrics = [[UILabel alloc] initWithFrame:lyricsRect];
+        [lyrics setTextColor:[UIColor whiteColor]];
+        [lyrics setTextAlignment:NSTextAlignmentCenter];
+        //[lyrics setTextColor:[UIColor whiteColor]];
+        [lyrics setFont:[UIFont fontWithName:@"Trebuchet MS" size:20.0f]];
+        [self.picker.cameraOverlayView addSubview:lyrics];
+        NSString *lyricOne = @"Here are the lyrics, sing along y'all!";
+        lyrics.text = lyricOne;
 	}
 	return self;
 }
@@ -74,6 +97,8 @@ AVAudioPlayer *_audioPlayer;
 -(void)beginRecording {
     NSLog(@"Running this function");
     [self.picker startVideoCapture];
+    [self.picker performSelector:@selector(stopVideoCapture) withObject:nil afterDelay:16];
+    [_audioPlayer performSelector:@selector(stop) withObject:nil afterDelay:16];
 }
 
 // Delegate method.  UIImagePickerController will call this method as soon as the image captured above is ready to be processed.  This is also like an event callback in JavaScript.
